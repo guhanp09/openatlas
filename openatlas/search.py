@@ -5,9 +5,20 @@ import unicodedata
 from urllib.parse import quote
 
 import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 from .data import LANGUAGES, normalize
+
+
+def select_terms(terms, frequencies, limit):
+    """Resolve frequency ties lexically, independent of NumPy's platform-specific quicksort."""
+    selected = sorted(zip(terms, frequencies), key=lambda item: (-int(item[1]), item[0]))[:limit]
+    return {term: i for i, term in enumerate(sorted(term for term, _ in selected))}
+
+
+def ranking_order(scores):
+    """Resolve insignificant floating point differences with a shared, stable rank policy."""
+    return np.argsort(-np.round(scores, 12), axis=-1, kind="stable")
 
 
 def words(text):
@@ -58,7 +69,20 @@ class SearchIndex:
                 lowercase=False,
                 ngram_range=(1, 2),
                 sublinear_tf=True,
-                dtype=np.float32,
+                dtype=np.float64,
+            )
+            # The default max_features implementation uses an unstable frequency sort.
+            # Select the same bounded vocabulary on every platform before fitting IDF.
+            counter = CountVectorizer(
+                analyzer="char_wb",
+                ngram_range=(3, 5),
+                lowercase=False,
+                preprocessor=normalize,
+                dtype=np.int64,
+            )
+            counts = counter.fit_transform(contexts)
+            vocabulary = select_terms(
+                counter.get_feature_names_out(), np.asarray(counts.sum(axis=0)).ravel(), 120000
             )
             char = TfidfVectorizer(
                 analyzer="char_wb",
@@ -66,8 +90,8 @@ class SearchIndex:
                 lowercase=False,
                 preprocessor=normalize,
                 sublinear_tf=True,
-                max_features=120000,
-                dtype=np.float32,
+                vocabulary=vocabulary,
+                dtype=np.float64,
             )
             self.parts[language] = {
                 "documents": docs,
@@ -94,7 +118,7 @@ class SearchIndex:
             raise ValueError("Invalid retrieval settings.")
         word, char = self.score_batch([question], language)
         scores = (1 - weight) * word[0] + weight * char[0]
-        order = np.argsort(-scores, kind="stable")[:k]
+        order = ranking_order(scores)[:k]
         return [
             {"document": self.parts[language]["documents"][int(i)], "score": float(scores[i])}
             for i in order

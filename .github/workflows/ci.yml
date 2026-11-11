@@ -15,6 +15,8 @@ jobs:
       - run: ruff check openatlas tests
       - run: pytest -q
       - run: python -m openatlas evaluate
+      - name: Verify committed evaluation is reproducible
+        run: git diff --exit-code -- reports/predictions.csv reports/payloads.csv reports/corpus_manifest.csv reports/selection.json
       - run: python -m playwright install --with-deps chromium
       - run: python tests/browser_check.py
       - uses: actions/upload-artifact@v4

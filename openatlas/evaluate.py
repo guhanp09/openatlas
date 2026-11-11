@@ -12,7 +12,7 @@ import matplotlib
 import numpy as np
 
 from .data import LANGUAGES, download, prepare
-from .search import SearchIndex, encode, response
+from .search import SearchIndex, encode, ranking_order, response
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ WEIGHTS = [0, 0.25, 0.5, 0.75, 1]
 
 def ranks_for(scores, gold_positions):
     """Stable tie policy matches production ranking; zero-score gold is not retrieved."""
-    order = np.argsort(-scores, axis=1, kind="stable")
+    order = ranking_order(scores)
     result = []
     for i, gold in enumerate(gold_positions):
         result.append(int(np.flatnonzero(order[i] == gold)[0]) + 1 if scores[i, gold] > 0 else 10**9)

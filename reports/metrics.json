@@ -10,9 +10,9 @@
       },
       "selected": {
         "queries": 440,
-        "recall_at_1": 0.7386363636363636,
+        "recall_at_1": 0.7431818181818182,
         "recall_at_5": 0.925,
-        "mrr_at_10": 0.8228805916305917
+        "mrr_at_10": 0.8247519841269841
       },
       "paired_recall5": {
         "difference": 0.045454545454545456,
@@ -31,14 +31,14 @@
       },
       "selected": {
         "queries": 113,
-        "recall_at_1": 0.6548672566371682,
-        "recall_at_5": 0.9203539823008849,
-        "mrr_at_10": 0.7724434611602753
+        "recall_at_1": 0.6460176991150443,
+        "recall_at_5": 0.911504424778761,
+        "mrr_at_10": 0.7687420986093552
       },
       "paired_recall5": {
-        "difference": 0.22123893805309736,
-        "lower_95": 0.1504424778761062,
-        "upper_95": 0.3008849557522124,
+        "difference": 0.21238938053097345,
+        "lower_95": 0.1415929203539823,
+        "upper_95": 0.2920353982300885,
         "unit": "query",
         "draws": 2000
       }
@@ -52,14 +52,14 @@
       },
       "selected": {
         "queries": 669,
-        "recall_at_1": 0.5575485799701047,
-        "recall_at_5": 0.7548579970104634,
-        "mrr_at_10": 0.6341999430564452
+        "recall_at_1": 0.5485799701046338,
+        "recall_at_5": 0.7518684603886397,
+        "mrr_at_10": 0.6269847201461551
       },
       "paired_recall5": {
-        "difference": 0.03736920777279522,
-        "lower_95": 0.01046337817638266,
-        "upper_95": 0.06427503736920777,
+        "difference": 0.0343796711509716,
+        "lower_95": 0.008968609865470852,
+        "upper_95": 0.06132286995515675,
         "unit": "query",
         "draws": 2000
       }
@@ -99,20 +99,20 @@
   "evaluation_queries": 1222,
   "selected_character_weight": 0.75,
   "macro_recall5_baseline": 0.7653830960103033,
-  "macro_recall5_selected": 0.8667373264371161,
+  "macro_recall5_selected": 0.8627909617224669,
   "language_guardrail_pass": true,
   "decision": "REVIEWED_PILOT_CANDIDATE",
   "payload": {
     "compact_bytes": 3188.0,
-    "expanded_bytes": 4141.0,
-    "compact_gzip_bytes": 901.0,
-    "expanded_gzip_bytes": 1588.5,
-    "mean_paired_reduction": 0.3977751441276216,
-    "mean_paired_gzip_reduction": 0.3503744823091615
+    "expanded_bytes": 4146.0,
+    "compact_gzip_bytes": 903.0,
+    "expanded_gzip_bytes": 1598.0,
+    "mean_paired_reduction": 0.3980991397792707,
+    "mean_paired_gzip_reduction": 0.3503646337314544
   },
   "local_timing": {
     "platform": "macOS-26.3-arm64-arm-64bit",
-    "warm_query_p50_ms": 5.596041497483384,
-    "warm_query_p95_ms": 6.540698550088564
+    "warm_query_p50_ms": 6.1190414999146014,
+    "warm_query_p95_ms": 7.592750302865171
   }
 }

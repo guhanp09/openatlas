@@ -31,7 +31,9 @@ def main():
                 page.locator(f'input[name="language"][value="{lang}"]').check()
                 page.locator("#question").fill(examples[lang])
                 page.locator("#question").press("Enter")
-                page.wait_for_function("() => document.querySelector('#status').textContent.includes('sources ·')")
+                page.wait_for_function(
+                    "() => document.querySelector('#status').textContent.includes('sources ·')"
+                )
                 assert page.locator(f".preview[lang='{code}']").count() > 0
                 checks.append(f"{lang}: Unicode question, keyboard submit and language-tagged results")
             compact_ids = page.locator(".result h2 a").evaluate_all("els => els.map(e => e.href)")
@@ -47,7 +49,9 @@ def main():
             page.locator("#saver").check()
             page.locator("#question").fill(examples["english"])
             page.locator("#question").press("Enter")
-            page.wait_for_function("() => document.querySelector('#status').textContent.includes('sources ·')")
+            page.wait_for_function(
+                "() => document.querySelector('#status').textContent.includes('sources ·')"
+            )
             page.screenshot(path=str(root / "reports/desktop.png"), full_page=True)
             page.set_viewport_size({"width": 390, "height": 844})
             assert page.evaluate("() => document.documentElement.scrollWidth <= innerWidth")
@@ -62,7 +66,9 @@ def main():
             checks.append("unknown-vocabulary query produces a clear empty state")
             page.locator("#question").fill('<img src=x onerror="window.attack=true">')
             page.locator("#question").press("Enter")
-            page.wait_for_function("() => document.querySelector('#results').getAttribute('aria-busy') === 'false'")
+            page.wait_for_function(
+                "() => document.querySelector('#results').getAttribute('aria-busy') === 'false'"
+            )
             assert page.evaluate("() => window.attack === undefined")
             assert page.locator("#results img").count() == 0
             checks.append("query markup does not execute or insert HTML")

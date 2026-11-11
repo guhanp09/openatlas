@@ -9,7 +9,7 @@ import pytest
 
 from openatlas.data import LANGUAGES, normalize, prepare
 from openatlas.evaluate import choose_weight, paired_interval, ranks_for
-from openatlas.search import SearchIndex, encode, response, truncate, words
+from openatlas.search import SearchIndex, encode, ranking_order, response, select_terms, truncate, words
 from openatlas.server import handler_for
 
 
@@ -68,6 +68,17 @@ def test_corpus_only_vocabulary(documents):
 def test_stable_rank_ties_and_zero_scores():
     scores = np.array([[0.5, 0.5, 0.1], [0, 0, 0], [0.2, 0.4, 0.3]])
     assert ranks_for(scores, [1, 0, 2]).tolist() == [2, 10**9, 2]
+
+
+def test_feature_cap_resolves_equal_frequency_terms_independent_of_input_order():
+    terms, counts = ["z", "b", "a", "c"], [2, 3, 2, 9]
+    expected = {"a": 0, "b": 1, "c": 2}
+    assert select_terms(terms, counts, 3) == expected
+    assert select_terms(list(reversed(terms)), list(reversed(counts)), 3) == expected
+
+
+def test_numerical_rank_ties_use_document_order():
+    assert ranking_order(np.array([0.5, 0.5 + 1e-15, 0.6])).tolist() == [2, 0, 1]
 
 
 def test_selection_rejects_language_harm_even_with_higher_macro():

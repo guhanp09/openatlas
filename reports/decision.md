@@ -9,10 +9,10 @@ Derived closed-corpus retrieval on TyDiQA-GoldP passages; not the official QA ta
 | Language | Word Recall@5 | Selected Recall@5 | Paired change (95% query bootstrap) |
 |---|---:|---:|---:|
 | English | 88.0% | 92.5% | +4.5 pp [+1.8, +7.3] |
-| Bengali | 69.9% | 92.0% | +22.1 pp [+15.0, +30.1] |
-| Telugu | 71.7% | 75.5% | +3.7 pp [+1.0, +6.4] |
+| Bengali | 69.9% | 91.2% | +21.2 pp [+14.2, +29.2] |
+| Telugu | 71.7% | 75.2% | +3.4 pp [+0.9, +6.1] |
 
-Equal-language macro Recall@5: **76.5% → 86.7%**.
+Equal-language macro Recall@5: **76.5% → 86.3%**.
 
 Compact mode reduces paired UTF-8 JSON response size by **39.8%** on average; gzip reduction is **35.0%**. Ranked IDs are unchanged.
 

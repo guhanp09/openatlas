@@ -17,9 +17,16 @@ The corpus necessarily includes the relevant passages for held-out queries. IDF 
 passages, not on hidden query text or answer labels. This measures fixed-corpus search, not retrieval
 over unseen documents. No tuning followed the held-out result.
 
+A cross-platform reproduction check found that the library's default feature-cap cutoff could choose
+different character n-grams when frequencies tied. The implementation now sorts these ties lexically,
+uses float64 arithmetic and applies the same 12-decimal score tie policy in evaluation and serving.
+This numerical/reproducibility correction retained the original data split, candidate grid and selection
+rule. Reports were regenerated; CI compares all query ranks, response sizes, corpus IDs and selection
+records against the committed evidence.
+
 ## 3. Read the language gap before recommending rollout
 
-Top-five retrieval is 92.5% for English, 92.0% for Bengali and 75.5% for Telugu. Improvement over each
+Top-five retrieval is 92.5% for English, 91.2% for Bengali and 75.2% for Telugu. Improvement over each
 baseline passes the predeclared comparison gate; it does not establish a satisfactory experience for
 every group. The next priority is Telugu failures and native-reader comprehension, with broader rollout
 held until those are understood. The Bengali sample is small, so its apparent parity should be treated

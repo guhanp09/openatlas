@@ -11,14 +11,14 @@ checks each language before recommending a pilot. It is an independent project, 
 ## The product decision
 
 An aggregate retrieval gain is insufficient if a language gets worse. A character/word retrieval blend,
-chosen on 450 validation queries, improved equal-language macro Recall@5 from **76.5% to 86.7%** on
+chosen on 450 validation queries, improved equal-language macro Recall@5 from **76.5% to 86.3%** on
 **1,222 held-out queries** over **3,931 passages**. Each language improved, but a substantial gap remains:
 
 | Language | Word baseline Recall@5 | Selected blend Recall@5 |
 |---|---:|---:|
 | English | 88.0% | 92.5% |
-| Bengali | 69.9% | 92.0% |
-| Telugu | 71.7% | 75.5% |
+| Bengali | 69.9% | 91.2% |
+| Telugu | 71.7% | 75.2% |
 
 These numbers measure retrieval of a known relevant passage in a **derived closed-corpus task using
 TyDiQA-GoldP data**, not Google's official question-answering task, open-web quality or customer adoption.
@@ -69,6 +69,8 @@ not native-reader usability research or an accessibility certification.
   articles/questions overlapping the development set are removed from selection data.
 - A single retrieval weight is selected using validation macro Recall@5 with a per-language regression
   guardrail. The held-out evaluation never chooses the weight.
+- Feature-frequency ties and score ties use deterministic ordering. CI requires regenerated query ranks,
+  response sizes, corpus IDs and selection records to match the committed evidence exactly.
 - The UI uses semantic form controls, keyboard focus states, language tags, live status messages and
   `textContent` for result rendering. No analytics or raw-query logging is enabled.
 - Every result links to its Wikipedia source. Excerpts come from an older dataset snapshot and may be

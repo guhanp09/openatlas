@@ -9,18 +9,19 @@
     {
       "command": "python -m pytest -q",
       "exit_code": 0,
-      "output": "............                                                             [100%]\n12 passed in 2.02s\n"
+      "output": ".............. [100%]\n14 passed in 2.54s\n"
     }
   ],
   "evaluation": "reports/metrics.json",
   "browser": "reports/browser_checks.json",
   "report_hashes": {
-    "metrics.json": "26b168706c5a456c4355f4097d4839205da708f1e41801df5afb9ad2a3e6c587",
-    "selection.json": "ecd86a2c3f11206d2bb7ad50b1200389d01b16eb2bafeb2dcd938c4695771e01",
-    "predictions.csv": "4bfe06e97e3478b0583193b4d1d5af2cc19b1cd2ac8b6e1680b07722cc691cca",
-    "payloads.csv": "fd766a67b7b30828d7c7fea51a95658ed26f6461b100a90e373737cae0c2ea10"
+    "metrics.json": "6678dd48e3efe11e2669d877284e3a30a570e1655721d9812f653d858314ebde",
+    "selection.json": "f7ffb133ffb141a075648f8861f5d639ccdf1b68ea6c940b162edd49656dd7c2",
+    "predictions.csv": "9ffb999dcb519339cd346233e9cdd536196b8fc09443afbceb529f1c1522bc45",
+    "payloads.csv": "e3e7014c62299fb031cc7fa2ab0a5f8b28ee5441497669404299602b9acf0c5d"
   },
   "package_build": "python -m pip wheel --no-deps --no-build-isolation . succeeded locally",
   "hosted_ci": "See repository Actions for independent hosted verification.",
-  "browser_checks_passed": 7
+  "browser_checks_passed": 7,
+  "reproducibility": "Deterministic frequency cutoff, float64 and shared stable ranking; CI verifies committed result files."
 }
