@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenAtlas — Find a source in your language</title>
+  <link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#question">Skip to search</a>
+<header class="masthead"><a class="brand" href="/" aria-label="OpenAtlas home"><span class="mark" aria-hidden="true">O<span>↗</span></span>OpenAtlas</a><span class="mast-note">KNOWLEDGE, IN YOUR WORDS</span></header>
+<main>
+  <section class="intro" aria-labelledby="page-title"><p class="eyebrow">A SMALLER, CLEARER WAY TO EXPLORE</p><h1 id="page-title">Find a source.<br><span>In your language.</span></h1><p class="lede">Ask a question in English, বাংলা or తెలుగు.<br>Explore original passages, then follow the source.</p></section>
+  <div class="workspace">
+    <section class="search-pane" aria-label="Search collection">
+      <form id="search-form">
+        <fieldset><legend>Choose your search language</legend><div class="languages">
+          <label><input type="radio" name="language" value="english" checked><span>English</span></label>
+          <label><input type="radio" name="language" value="bengali"><span lang="bn">বাংলা <small>Bengali</small></span></label>
+          <label><input type="radio" name="language" value="telugu"><span lang="te">తెలుగు <small>Telugu</small></span></label>
+        </div></fieldset>
+        <label class="query-label" for="question">What would you like to know?</label>
+        <div class="query-row"><input id="question" name="q" type="search" maxlength="300" required placeholder="Ask a question…" autocomplete="off"><button id="search-button" type="submit">Find sources <span aria-hidden="true">↗</span></button></div>
+        <div class="search-options"><label class="saver"><input id="saver" type="checkbox" checked><span>Data saver <small>Shorter previews, same sources</small></span></label><button class="text-button" id="example" type="button">Try a sample question</button></div>
+      </form>
+      <div id="status" role="status" aria-live="polite">Choose a language and ask your first question.</div>
+      <section id="results" aria-label="Search results" aria-busy="false"></section>
+    </section>
+    <aside class="guide"><span class="guide-number">01 / EXPLORE</span><h2>Read the source.<br>Keep the context.</h2><p>Results are excerpts from a small Wikipedia collection. Open a source to read the full article and check its current context.</p><div class="guide-rule"></div><h3>A language you choose</h3><p>Your choice controls the collection searched. Queries are not translated automatically.</p><h3>A lighter first look</h3><p>Data saver shortens previews. Turn it off when you need more context.</p><p class="privacy">Your searches stay in this local session. No query history is saved.</p></aside>
+  </div>
+  <footer><span>Independent research prototype · No Google affiliation</span><span>Excerpts: Wikipedia contributors via <a href="https://github.com/google-research-datasets/tydiqa" rel="noreferrer">TyDi QA</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noreferrer">CC BY-SA</a></span></footer>
+</main>
+</body></html>

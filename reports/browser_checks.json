@@ -1,0 +1,16 @@
+{
+  "browser_version": "157.0.8103.39",
+  "browser_channel": "chrome",
+  "passed": 7,
+  "checks": [
+    "english: Unicode question, keyboard submit and language-tagged results",
+    "bengali: Unicode question, keyboard submit and language-tagged results",
+    "telugu: Unicode question, keyboard submit and language-tagged results",
+    "data saver changes preview length while preserving ranked source links",
+    "390px mobile view has no horizontal overflow",
+    "unknown-vocabulary query produces a clear empty state",
+    "query markup does not execute or insert HTML"
+  ],
+  "browser_errors": [],
+  "scope": "Automated browser checks; not native-reader usability or accessibility certification"
+}

@@ -1,0 +1,118 @@
+{
+  "task": "derived closed-corpus retrieval; not an official TyDi QA score",
+  "languages": {
+    "english": {
+      "baseline": {
+        "queries": 440,
+        "recall_at_1": 0.6931818181818182,
+        "recall_at_5": 0.8795454545454545,
+        "mrr_at_10": 0.7757224025974025
+      },
+      "selected": {
+        "queries": 440,
+        "recall_at_1": 0.7386363636363636,
+        "recall_at_5": 0.925,
+        "mrr_at_10": 0.8228805916305917
+      },
+      "paired_recall5": {
+        "difference": 0.045454545454545456,
+        "lower_95": 0.01818181818181818,
+        "upper_95": 0.07272727272727272,
+        "unit": "query",
+        "draws": 2000
+      }
+    },
+    "bengali": {
+      "baseline": {
+        "queries": 113,
+        "recall_at_1": 0.46017699115044247,
+        "recall_at_5": 0.6991150442477876,
+        "mrr_at_10": 0.5581191178536311
+      },
+      "selected": {
+        "queries": 113,
+        "recall_at_1": 0.6548672566371682,
+        "recall_at_5": 0.9203539823008849,
+        "mrr_at_10": 0.7724434611602753
+      },
+      "paired_recall5": {
+        "difference": 0.22123893805309736,
+        "lower_95": 0.1504424778761062,
+        "upper_95": 0.3008849557522124,
+        "unit": "query",
+        "draws": 2000
+      }
+    },
+    "telugu": {
+      "baseline": {
+        "queries": 669,
+        "recall_at_1": 0.4499252615844544,
+        "recall_at_5": 0.7174887892376681,
+        "mrr_at_10": 0.5444580871710917
+      },
+      "selected": {
+        "queries": 669,
+        "recall_at_1": 0.5575485799701047,
+        "recall_at_5": 0.7548579970104634,
+        "mrr_at_10": 0.6341999430564452
+      },
+      "paired_recall5": {
+        "difference": 0.03736920777279522,
+        "lower_95": 0.01046337817638266,
+        "upper_95": 0.06427503736920777,
+        "unit": "query",
+        "draws": 2000
+      }
+    }
+  },
+  "counts": {
+    "english": {
+      "source_train": 3696,
+      "source_development": 440,
+      "train_rows_removed_for_overlap": 0,
+      "development_duplicates_removed": 0,
+      "validation_queries": 150,
+      "evaluation_queries": 440,
+      "corpus_passages": 1371
+    },
+    "bengali": {
+      "source_train": 2390,
+      "source_development": 113,
+      "train_rows_removed_for_overlap": 67,
+      "development_duplicates_removed": 0,
+      "validation_queries": 150,
+      "evaluation_queries": 113,
+      "corpus_passages": 1022
+    },
+    "telugu": {
+      "source_train": 5563,
+      "source_development": 669,
+      "train_rows_removed_for_overlap": 54,
+      "development_duplicates_removed": 0,
+      "validation_queries": 150,
+      "evaluation_queries": 669,
+      "corpus_passages": 1538
+    }
+  },
+  "passages": 3931,
+  "validation_queries": 450,
+  "evaluation_queries": 1222,
+  "selected_character_weight": 0.75,
+  "macro_recall5_baseline": 0.7653830960103033,
+  "macro_recall5_selected": 0.8667373264371161,
+  "language_guardrail_pass": true,
+  "decision": "REVIEWED_PILOT_CANDIDATE",
+  "payload": {
+    "compact_bytes": 3188.0,
+    "expanded_bytes": 4141.0,
+    "compact_gzip_bytes": 901.0,
+    "expanded_gzip_bytes": 1588.5,
+    "mean_paired_reduction": 0.3977751441276216,
+    "mean_paired_gzip_reduction": 0.3503744823091615
+  },
+  "local_timing": {
+    "platform": "macOS-26.3-arm64-arm-64bit",
+    "warm_query_p50_ms": 5.596041497483384,
+    "warm_query_p95_ms": 6.540698550088564
+  }
+}

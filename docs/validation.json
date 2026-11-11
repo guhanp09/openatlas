@@ -1,0 +1,26 @@
+{
+  "implementation_date": "2026-11-11",
+  "checks": [
+    {
+      "command": "python -m ruff check openatlas tests",
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "output": "............                                                             [100%]\n12 passed in 2.02s\n"
+    }
+  ],
+  "evaluation": "reports/metrics.json",
+  "browser": "reports/browser_checks.json",
+  "report_hashes": {
+    "metrics.json": "26b168706c5a456c4355f4097d4839205da708f1e41801df5afb9ad2a3e6c587",
+    "selection.json": "ecd86a2c3f11206d2bb7ad50b1200389d01b16eb2bafeb2dcd938c4695771e01",
+    "predictions.csv": "4bfe06e97e3478b0583193b4d1d5af2cc19b1cd2ac8b6e1680b07722cc691cca",
+    "payloads.csv": "fd766a67b7b30828d7c7fea51a95658ed26f6461b100a90e373737cae0c2ea10"
+  },
+  "package_build": "python -m pip wheel --no-deps --no-build-isolation . succeeded locally",
+  "hosted_ci": "See repository Actions for independent hosted verification.",
+  "browser_checks_passed": 7
+}

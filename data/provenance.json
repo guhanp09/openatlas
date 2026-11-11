@@ -1,0 +1,17 @@
+{
+  "dataset": "TyDiQA-GoldP, Hugging Face secondary_task mirror",
+  "revision": "da78f23f9119363459acbaf46bf89426ff26c259",
+  "upstream": "https://github.com/google-research-datasets/tydiqa",
+  "files": {
+    "train": {
+      "url": "https://huggingface.co/datasets/google-research-datasets/tydiqa/resolve/da78f23f9119363459acbaf46bf89426ff26c259/secondary_task/train-00000-of-00001.parquet",
+      "sha256": "8139944554bcd89f6c4b167b93c9a63ec44a6d97b8caebe049061f78fcc0e786",
+      "bytes": 26918058
+    },
+    "validation": {
+      "url": "https://huggingface.co/datasets/google-research-datasets/tydiqa/resolve/da78f23f9119363459acbaf46bf89426ff26c259/secondary_task/validation-00000-of-00001.parquet",
+      "sha256": "38760fbfc8fa4d0765026d56cfbb65a39231ad8cf5afef40f9c962a26bd3f94d",
+      "bytes": 2484180
+    }
+  }
+}

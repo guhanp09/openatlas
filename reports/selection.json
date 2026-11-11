@@ -1,0 +1,107 @@
+{
+  "character_weight": 0.75,
+  "selection": "validation_language_macro_recall_at_5",
+  "guardrail": "no validation language decline greater than 0.02",
+  "validation": {
+    "0": {
+      "english": {
+        "queries": 150,
+        "recall_at_1": 0.6333333333333333,
+        "recall_at_5": 0.8266666666666667,
+        "mrr_at_10": 0.7134708994708995
+      },
+      "bengali": {
+        "queries": 150,
+        "recall_at_1": 0.4266666666666667,
+        "recall_at_5": 0.74,
+        "mrr_at_10": 0.5613306878306878
+      },
+      "telugu": {
+        "queries": 150,
+        "recall_at_1": 0.4533333333333333,
+        "recall_at_5": 0.7333333333333333,
+        "mrr_at_10": 0.559063492063492
+      }
+    },
+    "0.25": {
+      "english": {
+        "queries": 150,
+        "recall_at_1": 0.6866666666666666,
+        "recall_at_5": 0.88,
+        "mrr_at_10": 0.7708597883597883
+      },
+      "bengali": {
+        "queries": 150,
+        "recall_at_1": 0.49333333333333335,
+        "recall_at_5": 0.8333333333333334,
+        "mrr_at_10": 0.6309391534391534
+      },
+      "telugu": {
+        "queries": 150,
+        "recall_at_1": 0.54,
+        "recall_at_5": 0.7733333333333333,
+        "mrr_at_10": 0.6281984126984128
+      }
+    },
+    "0.5": {
+      "english": {
+        "queries": 150,
+        "recall_at_1": 0.7466666666666667,
+        "recall_at_5": 0.9066666666666666,
+        "mrr_at_10": 0.8177222222222222
+      },
+      "bengali": {
+        "queries": 150,
+        "recall_at_1": 0.54,
+        "recall_at_5": 0.8866666666666667,
+        "mrr_at_10": 0.679574074074074
+      },
+      "telugu": {
+        "queries": 150,
+        "recall_at_1": 0.5733333333333334,
+        "recall_at_5": 0.7733333333333333,
+        "mrr_at_10": 0.6496984126984128
+      }
+    },
+    "0.75": {
+      "english": {
+        "queries": 150,
+        "recall_at_1": 0.74,
+        "recall_at_5": 0.9133333333333333,
+        "mrr_at_10": 0.8147407407407408
+      },
+      "bengali": {
+        "queries": 150,
+        "recall_at_1": 0.5533333333333333,
+        "recall_at_5": 0.8933333333333333,
+        "mrr_at_10": 0.695415343915344
+      },
+      "telugu": {
+        "queries": 150,
+        "recall_at_1": 0.5866666666666667,
+        "recall_at_5": 0.8,
+        "mrr_at_10": 0.6659338624338624
+      }
+    },
+    "1": {
+      "english": {
+        "queries": 150,
+        "recall_at_1": 0.7466666666666667,
+        "recall_at_5": 0.9,
+        "mrr_at_10": 0.8130000000000001
+      },
+      "bengali": {
+        "queries": 150,
+        "recall_at_1": 0.5666666666666667,
+        "recall_at_5": 0.8933333333333333,
+        "mrr_at_10": 0.696962962962963
+      },
+      "telugu": {
+        "queries": 150,
+        "recall_at_1": 0.5666666666666667,
+        "recall_at_5": 0.7933333333333333,
+        "mrr_at_10": 0.6609973544973545
+      }
+    }
+  }
+}

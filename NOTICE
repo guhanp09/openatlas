@@ -1,0 +1,18 @@
+OpenAtlas project code: Copyright 2026 Guhan Purushothaman; MIT License.
+
+Dataset: TyDi QA, Jonathan H. Clark, Eunsol Choi, Michael Collins, Dan Garrette,
+Tom Kwiatkowski, Vitaly Nikolaev and Jennimaria Palomaki (2020).
+https://github.com/google-research-datasets/tydiqa
+The Hugging Face google-research-datasets/tydiqa mirror declares Apache 2.0.
+https://huggingface.co/datasets/google-research-datasets/tydiqa
+
+Underlying passages are from Wikipedia contributors and retain their original
+attribution/share-alike terms. Dataset source snapshots are from 2019.
+https://creativecommons.org/licenses/by-sa/3.0/
+https://en.wikipedia.org/wiki/Wikipedia:Copyrights
+
+Raw dataset files and the locally generated corpus/index are not distributed
+in this repository. The application links each excerpt to its source article.
+Preview text is truncated; screenshots contain attributed source excerpts.
+Search metrics are from a new derived closed-corpus retrieval task and are
+not official TyDi QA benchmark submissions. Google has not endorsed this work.

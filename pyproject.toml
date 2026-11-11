@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openatlas-search"
+version = "0.1.0"
+description = "Multilingual search prototype with language-level launch evaluation"
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy==2.3.5", "scipy==1.18.1", "scikit-learn==1.9.1", "pyarrow==24.0.0", "joblib==1.6.0", "matplotlib==3.11.2"]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0", "ruff==0.17.4", "playwright==1.64.1"]
+
+[tool.setuptools.packages.find]
+include = ["openatlas*"]
+
+[tool.setuptools.package-data]
+openatlas = ["static/*"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

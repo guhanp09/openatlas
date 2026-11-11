@@ -1,0 +1,23 @@
+name: Verify
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -e '.[dev]'
+      - run: ruff check openatlas tests
+      - run: pytest -q
+      - run: python -m openatlas evaluate
+      - run: python -m playwright install --with-deps chromium
+      - run: python tests/browser_check.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-and-browser-evidence
+          path: reports/
